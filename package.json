@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "SQL 쿼리에서 사용 테이블과 관계를 추출해 ERD를 보여주는 Next.js 웹앱",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "overrides": {
     "postcss": "^8.5.10"
   },

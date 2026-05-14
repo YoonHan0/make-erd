@@ -99,8 +99,12 @@ function extractResultData(payload: unknown): ProxyHealthResultData | undefined 
   };
 }
 
-function getStringField(record: Record<string, unknown>, key: string): string | undefined {
-  const value = record[key];
+function getStringField(record: unknown, key: string): string | undefined {
+  if (!record || typeof record !== 'object') {
+    return undefined;
+  }
+
+  const value = (record as Record<string, unknown>)[key];
   return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
 }
 
@@ -113,7 +117,11 @@ function getNumberField(record: unknown, key: string): number | undefined {
   return typeof value === 'number' ? value : undefined;
 }
 
-function getBooleanField(record: Record<string, unknown>, key: string): boolean | undefined {
-  const value = record[key];
+function getBooleanField(record: unknown, key: string): boolean | undefined {
+  if (!record || typeof record !== 'object') {
+    return undefined;
+  }
+
+  const value = (record as Record<string, unknown>)[key];
   return typeof value === 'boolean' ? value : undefined;
 }
