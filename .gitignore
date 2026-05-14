@@ -1,0 +1,31 @@
+node_modules
+dist
+coverage
+.next
+
+# env (secrets)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# local build/cache artifacts
+*.tsbuildinfo
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# os/editor
+.DS_Store
+.vercel
+
+# local snapshots/temp
+.state_snapshots
+
+# local-only mcp test scripts (contain private endpoint/path examples)
+test-mcp.cjs
+test-mcp.ts
